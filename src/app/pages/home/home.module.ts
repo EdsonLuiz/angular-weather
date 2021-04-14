@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePages } from './home.pages';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
+
+import { HomePages } from './home.pages';
+import { HomeReducer } from './state/home.reducer';
 
 
 
@@ -9,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [HomePages],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forFeature('home', HomeReducer)
   ]
 })
 export class HomeModule { }
