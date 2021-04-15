@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 import { HomeModule } from './pages/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,8 @@ import { EffectsModule } from '@ngrx/effects';
     BookmarksModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
