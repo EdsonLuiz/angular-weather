@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+
+import { select, Store } from '@ngrx/store';
 
 import * as fromHomeActions from './state/home.actions';
 import * as fromHomeSelectors from './state/home.selectors';
@@ -12,20 +13,18 @@ import * as fromHomeSelectors from './state/home.selectors';
 })
 export class HomePages implements OnInit {
 
-  searchControl: FormControl
+  searchControl: FormControl;
+
   text: string;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store) {
+  }
 
-  ngOnInit(): void {
-    this.searchControl = new FormControl('', Validators.required)
-    this.store.pipe(select(fromHomeSelectors.selectHomeText))
-      .subscribe(text => this.text = text)
+  ngOnInit() {
+    this.searchControl = new FormControl('', Validators.required);
   }
 
   doSearch() {
-    const text = this.searchControl.value
-    this.store.dispatch(fromHomeActions.changeText({text}))
+    const text = this.searchControl.value;
   }
-
 }

@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 import { HomeModule } from './pages/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,8 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
-    HttpClient
+    HttpClientModule,
+    // HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
