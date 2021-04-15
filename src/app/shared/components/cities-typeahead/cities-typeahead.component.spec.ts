@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookmarksPages } from './bookmarks.pages';
+import { CitiesTypeaheadComponent } from './cities-typeahead.component';
 
-describe('BookmarksPages', () => {
-  let component: BookmarksPages;
-  let fixture: ComponentFixture<BookmarksPages>;
+describe('CitiesTypeaheadComponent', () => {
+  let component: CitiesTypeaheadComponent;
+  let fixture: ComponentFixture<CitiesTypeaheadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookmarksPages ]
+      declarations: [ CitiesTypeaheadComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookmarksPages);
+    fixture = TestBed.createComponent(CitiesTypeaheadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

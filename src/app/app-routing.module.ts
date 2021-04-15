@@ -1,12 +1,12 @@
-import { BookmarksPages } from './pages/bookmarks/bookmarks.pages';
-import { HomePages } from './pages/home/home.pages';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { HomePage } from './pages/home/containers/home/home.page';
+import { BookmarksPage } from './pages/bookmarks/containers/bookmarks/bookmarks.page';
 
 const routes: Routes = [
-  {path: '', component: HomePages},
-  {path: 'bookmarks', component: BookmarksPages}
+  { path: '', component: HomePage },
+  { path: 'bookmarks', component: BookmarksPage },
+  { path: 'details', loadChildren: () => import('./pages/details/details.module').then(m => m.DetailsModule) },
 ];
 
 @NgModule({
